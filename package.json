@@ -11,10 +11,11 @@
     "start": "node lib/index.js",
     "prepublish": "npm run build",
     "precoverage": "rm -rf coverage/",
-    "coverage": "BABEL_ENV=coverage mocha --compilers js:babel-register --timeout 15000 -R test/coverage-reporter.js"
+    "coverage": "BABEL_ENV=coverage mocha --compilers js:babel-register --timeout 15000 -R test/coverage-reporter.js",
+    "report": "npm run coverage && codecov -f coverage/coverage-final.json"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Mehdi Kouhen",
+  "license": "MIT",
   "dependencies": {
     "@seald/uodm": "^0.2.16",
     "express": "^4.15.2",
@@ -31,6 +32,7 @@
     "babel-register": "^6.24.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
+    "codecov": "^2.1.0",
     "eslint": "^3.18.0",
     "eslint-config-standard": "^7.1.0",
     "eslint-plugin-standard": "^2.1.1",
