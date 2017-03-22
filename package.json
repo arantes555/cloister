@@ -1,0 +1,45 @@
+{
+  "name": "cloister",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register --timeout 15000",
+    "prebuild": "rm -rf lib/",
+    "build": "babel src --out-dir lib --source-maps",
+    "prestart": "npm run build",
+    "start": "node lib/index.js",
+    "prepublish": "npm run build",
+    "precoverage": "rm -rf coverage/",
+    "coverage": "BABEL_ENV=coverage mocha --compilers js:babel-register --timeout 15000 -R test/coverage-reporter.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@seald/uodm": "^0.2.16",
+    "express": "^4.15.2",
+    "joi": "^10.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.2.0",
+    "babel-plugin-istanbul": "^4.1.1",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "eslint": "^3.18.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "fs-jetpack": "^0.13.2",
+    "istanbul-api": "^1.1.6",
+    "istanbul-lib-coverage": "^1.0.1",
+    "mocha": "^3.2.0",
+    "mocha-standard": "^1.0.0",
+    "source-map-support": "^0.4.14",
+    "standard": "^9.0.2"
+  }
+}
